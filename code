@@ -1,0 +1,68 @@
+// Christian Delaune
+// 09 Assignment - Using References to hack and Bankrupting the terrorists
+
+// this tells the operating system what library to include
+#include <iostream>
+
+// using this allows for certain abreviations to coding
+using namespace std;
+
+// function prototype (declaration)
+void normalTransaction(int x, int y);
+
+// function prototype (declaration)
+void hackedTransaction(int& x, int& y);
+
+// main function
+int main()
+{
+	// Joes Coffee Shop Original Account Balance
+	int joesCoffeeShopAccount = 22;
+
+	// Terrorist Original Account Balance
+	int terroristAccount = 9565453;
+
+    // This shows what is going to be stated on line that are readable on execution of the program
+	cout << "          Bank of Terror" << endl;
+	cout << "------------------------------------" << endl;
+	cout << "------------------------------------" << endl;
+	cout << "\n         Account Balances" << endl;
+	cout << "____________________________________\n" << endl;
+	// This will substitute the variable for the what they were set to earlier
+	cout << "Joes Coffee Shop Account: $" << joesCoffeeShopAccount << endl;
+	cout << "Terrorist Account:        $" << terroristAccount << "\n\n"<< endl;
+
+	cout << "Calling normalTransaction()\n";
+	
+	// Call the function normalTransaction with the integers <joesCoffeeShopAccount> and <terroristAccount>
+	normalTransaction(joesCoffeeShopAccount, terroristAccount);
+
+	cout << "Joes Coffee Shop Account: $" << joesCoffeeShopAccount << "\n";
+	cout << "Terrorist Account:        $" << terroristAccount << "\n\n";
+	cout << "Calling hackedTransaction()\n";
+
+	// Call the function hackedTransaction with the integers <joesCoffeeShopAccount> and <terroristAccount>
+	hackedTransaction(joesCoffeeShopAccount, terroristAccount);
+
+	cout << "Joes Coffee Shop Account: $" << joesCoffeeShopAccount << "\n";
+	cout << "Terrorist Account:        $" << terroristAccount << "\n";
+
+	// Return a value of 0
+	return 0;
+}
+
+// Function definition
+void normalTransaction(int x, int y)
+{
+	int temp = x;
+	x = y;
+	y = temp;
+}
+
+// Function definition
+void hackedTransaction(int& x, int& y)
+{
+	int temp = x;
+	x = y;
+	y = temp;
+}
